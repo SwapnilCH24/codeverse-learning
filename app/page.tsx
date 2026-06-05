@@ -41,16 +41,20 @@ export default function Home() {
           learning, projects and quizzes.
         </p>
 
-        <a
-  href="#courses"
-  className="inline-block mt-10 bg-blue-600 hover:bg-blue-500 px-10 py-5 rounded-xl"
+        <button
+  onClick={() => {
+    document.getElementById("courses")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className="mt-10 bg-blue-600 hover:bg-blue-500 px-10 py-5 rounded-xl"
 >
   Start Learning
-</a>
+</button>
       </section>
 
       {/* Courses */}
-      <section id="courses" className="scroll-mt-24 px-4 md:px-10 py-16">
+      <section id="courses" className="px-4 md:px-10 py-16">
         <h2 className="text-4xl font-bold text-center mb-12">
           Web Development Courses
         </h2>
