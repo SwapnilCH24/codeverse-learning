@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Courses */}
-      <section id="courses" className="px-4 md:px-10 py-16">
+      <section id="courses" className="scroll-mt-24 px-4 md:px-10 py-16">
         <h2 className="text-4xl font-bold text-center mb-12">
           Web Development Courses
         </h2>
