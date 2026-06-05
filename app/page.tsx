@@ -7,7 +7,7 @@ export default function Home() {
           CodeVerse Learning
         </h1>
 
-        <div className="hidden md:flex gap-8 text-gray-300">
+        <div className="flex gap-4 md:gap-8 text-gray-300 text-sm md:text-base">
           <a href="#home" className="hover:text-blue-400 transition">
   Home
 </a>
