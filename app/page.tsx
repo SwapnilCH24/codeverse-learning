@@ -2,12 +2,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex justify-between items-center px-10 py-6 backdrop-blur-md bg-black/30 border-b border-gray-800">
+       <nav className="sticky top-0 z-50 flex justify-between items-center px-4 md:px-10 py-4 md:py-6 backdrop-blur-md bg-black/30 border-b border-gray-800">
         <h1 className="text-3xl font-bold text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.8)]">
           CodeVerse Learning
         </h1>
 
-        <div className="flex gap-8 text-gray-300">
+        <div className="hidden md:flex gap-8 text-gray-300">
           <a href="#home" className="hover:text-blue-400 transition">
   Home
 </a>
@@ -31,11 +31,11 @@ export default function Home() {
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
 
 <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
-        <h1 className="text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
           Learn Web Development Like a Pro
         </h1>
 
-        <p className="text-gray-400 text-xl max-w-3xl mx-auto">
+        <p className="text-gray-400 text-base md:text-xl max-w-3xl mx-auto">
           Master HTML, CSS, JavaScript, React, Backend Development,
           Databases and modern web technologies through structured
           learning, projects and quizzes.
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Courses */}
-      <section id="courses" className="px-10 py-16">
+      <section id="courses" className="px-4 md:px-10 py-16">
         <h2 className="text-4xl font-bold text-center mb-12">
           Web Development Courses
         </h2>
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section id="about" className="px-10 py-20">
+      <section id="about" className="px-4 md:px-10 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
           Why Choose CodeVerse Learning?
         </h2>
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Statistics */}
-      <section className="px-10 py-20">
+      <section className="px-4 md:px-10 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
           Platform Statistics
         </h2>
@@ -172,12 +172,12 @@ export default function Home() {
       </section>
 
       {/* Team */}
-      <section id="team" className="px-10 py-20">
+      <section id="team" className="px-4 md:px-10 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
           Meet Our Team
         </h2>
 
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
          <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
             <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
