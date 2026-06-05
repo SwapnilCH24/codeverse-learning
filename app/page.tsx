@@ -41,16 +41,12 @@ export default function Home() {
           learning, projects and quizzes.
         </p>
 
-        <button
-  onClick={() => {
-    document.getElementById("courses")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }}
-  className="mt-10 bg-blue-600 hover:bg-blue-500 px-10 py-5 rounded-xl"
+        <a
+  href="#courses"
+  className="inline-block mt-10 bg-blue-600 hover:bg-blue-500 px-10 py-5 rounded-xl"
 >
   Start Learning
-</button>
+</a>
       </section>
 
       {/* Courses */}
