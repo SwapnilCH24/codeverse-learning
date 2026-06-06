@@ -147,8 +147,8 @@ export default function HTMLCourse() {
   Semantic tags help browsers and developers understand the meaning of content.
 </p>
 
-<div className="bg-black p-4 rounded-lg border border-gray-700">
-  <pre>
+<div className="bg-black p-4 rounded-lg border border-gray-700 overflow-x-auto">
+  <pre className="text-sm whitespace-pre">
 {`<header>Website Header</header>
 
 <nav>Navigation Menu</nav>
@@ -168,8 +168,8 @@ export default function HTMLCourse() {
   HTML allows developers to add images, audio and videos to web pages.
 </p>
 
-<div className="bg-black p-4 rounded-lg border border-gray-700">
-  <pre>
+<div className="bg-black p-4 rounded-lg border border-gray-700 overflow-x-auto">
+  <pre className="text-sm whitespace-pre">
 {`<img src="photo.jpg" alt="My Photo" />
 
 <audio controls>
@@ -192,8 +192,8 @@ export default function HTMLCourse() {
   Links connect pages together using the anchor tag.
 </p>
 
-<div className="bg-black p-4 rounded-lg border border-gray-700">
-  <pre>
+<div className="bg-black p-4 rounded-lg border border-gray-700 overflow-x-auto">
+  <pre className="text-sm whitespace-pre">
 {`<a href="https://google.com">
   Visit Google
 </a>`}
@@ -210,8 +210,8 @@ export default function HTMLCourse() {
   SEO helps search engines understand and rank your website.
 </p>
 
-<div className="bg-black p-4 rounded-lg border border-gray-700">
-  <pre>
+<div className="bg-black p-4 rounded-lg border border-gray-700 overflow-x-auto">
+  <pre className="text-sm whitespace-pre">
 {`<title>My Website</title>
 
 <meta
@@ -231,8 +231,8 @@ export default function HTMLCourse() {
   Build a complete portfolio website using everything learned in HTML.
 </p>
 
-<div className="bg-black p-4 rounded-lg border border-gray-700">
-  <pre>
+<div className="bg-black p-4 rounded-lg border border-gray-700 overflow-x-auto">
+  <pre className="text-sm whitespace-pre">
 {`Portfolio Website Project
 
 ✔ Header
