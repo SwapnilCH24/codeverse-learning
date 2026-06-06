@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { auth, db } from "./lib/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -254,19 +255,37 @@ const loadReviews = async () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
          <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
+            <Image
+  src="/swapnil.png"
+  alt="Swapnil Chakraborty"
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+/>
             <h3 className="font-bold">Swapnil Chakraborty</h3>
             <p className="text-gray-400">Team Leader</p>
           </div>
 
           <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
+            <Image
+  src="/salkwchang.png"
+  alt="Salkwchang Debbarma"
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+/>
             <h3 className="font-bold">Salkwchang Debbarma</h3>
             <p className="text-gray-400">Frontend Developer</p>
           </div>
 
           <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
+            <Image
+  src="/nayan.png"
+  alt="Nayan Das"
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+/>
             <h3 className="font-bold">Nayan Das</h3>
             <p className="text-gray-400">Backend Developer</p>
           </div>
@@ -278,7 +297,13 @@ const loadReviews = async () => {
           </div>
 
           <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
+            <Image
+  src="/dipu.png"
+  alt="Dipu Debbarma"
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+/>
             <h3 className="font-bold">Dipu Debbarma</h3>
             <p className="text-gray-400">Project Coordinator</p>
           </div>
