@@ -6,6 +6,8 @@ import { auth, db } from "./lib/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 import {
@@ -19,9 +21,17 @@ export default function Home() {
 const [password, setPassword] = useState("");
 const [review, setReview] = useState("");
 const [reviews, setReviews] = useState<any[]>([]);
+const [showAllReviews, setShowAllReviews] = useState(false);
 const [rating, setRating] = useState(5);
+const [user, setUser] = useState<any>(null);
 useEffect(() => {
   loadReviews();
+
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  return () => unsubscribe();
 }, []);
   const handleSignUp = async () => {
   try {
@@ -64,7 +74,9 @@ const loadReviews = async () => {
 
   setReviews(data);
 };
-
+const handleLogout = async () => {
+  await signOut(auth);
+};
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white">
       {/* Navbar */}
@@ -92,12 +104,18 @@ const loadReviews = async () => {
          <a href="#contact" className="hover:text-blue-400 transition">
   Contact
 </a>
-         <a
-  href="#login"
-  className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
->
-  Login
-</a>
+         {user ? (
+  <div className="bg-blue-600 px-4 py-2 rounded-lg">
+  {user.email.split("@")[0]}
+</div>
+) : (
+  <a
+    href="#login"
+    className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+  >
+    Login
+  </a>
+)}
         </div>
       </nav>
 
@@ -346,7 +364,7 @@ const loadReviews = async () => {
 >
   Submit Review
 </button>
-{reviews.map((r, index) => (
+{(showAllReviews ? reviews : reviews.slice(0, 1)).map((r, index) => (
   <div key={index} className="bg-gray-900 p-4 rounded mt-4">
     <p className="text-sm text-gray-400">{r.email}</p>
     <p>{"⭐".repeat(r.rating || 0)}</p>
@@ -357,6 +375,14 @@ const loadReviews = async () => {
     
   </div>
 ))}
+{reviews.length > 1 && (
+  <button
+    onClick={() => setShowAllReviews(!showAllReviews)}
+    className="mt-4 text-blue-400"
+  >
+    {showAllReviews ? "Hide reviews" : `Show all ${reviews.length} reviews`}
+  </button>
+)}
 </div>
 </section>
 
@@ -366,6 +392,20 @@ const loadReviews = async () => {
     Login / Sign Up
   </h2>
 
+  {user ? (
+  <div className="max-w-md mx-auto bg-gray-900 p-8 rounded-xl text-center">
+    <h3 className="text-2xl font-bold mb-4">
+      Welcome, {user.email.split("@")[0]}
+    </h3>
+
+    <button
+      onClick={handleLogout}
+      className="bg-red-600 px-6 py-3 rounded"
+    >
+      Logout
+    </button>
+  </div>
+) : (
   <div className="max-w-md mx-auto bg-gray-900 p-8 rounded-xl">
     <input
   type="email"
@@ -399,6 +439,7 @@ onChange={(e) => setPassword(e.target.value)}
 </button>
 </div>
 </div>
+)}
 </section>
 
       {/* Footer */}
