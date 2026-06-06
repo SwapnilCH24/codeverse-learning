@@ -30,6 +30,10 @@ export default function HTMLCourse() {
   <li>📚 Chapter 4 - Lists & Tables</li>
   <li>📚 Chapter 5 - Forms</li>
   <li>📚 Chapter 6 - Semantic HTML</li>
+  <li>📚 Chapter 7 - Images & Multimedia</li>
+  <li>📚 Chapter 8 - Links & Navigation</li>
+  <li>📚 Chapter 9 - SEO Basics</li>
+  <li>📚 Chapter 10 - HTML Final Project</li>
 </ul>
 <hr className="my-8 border-gray-700" />
 
@@ -152,6 +156,90 @@ export default function HTMLCourse() {
 <main>Main Content</main>
 
 <footer>Website Footer</footer>`}
+  </pre>
+</div>
+<hr className="my-8 border-gray-700" />
+
+<h2 className="text-2xl font-bold mb-4">
+  Chapter 7: Images & Multimedia
+</h2>
+
+<p className="text-gray-400 mb-4">
+  HTML allows developers to add images, audio and videos to web pages.
+</p>
+
+<div className="bg-black p-4 rounded-lg border border-gray-700">
+  <pre>
+{`<img src="photo.jpg" alt="My Photo" />
+
+<audio controls>
+  <source src="song.mp3" />
+</audio>
+
+<video controls width="300">
+  <source src="video.mp4" />
+</video>`}
+  </pre>
+</div>
+
+<hr className="my-8 border-gray-700" />
+
+<h2 className="text-2xl font-bold mb-4">
+  Chapter 8: Links & Navigation
+</h2>
+
+<p className="text-gray-400 mb-4">
+  Links connect pages together using the anchor tag.
+</p>
+
+<div className="bg-black p-4 rounded-lg border border-gray-700">
+  <pre>
+{`<a href="https://google.com">
+  Visit Google
+</a>`}
+  </pre>
+</div>
+
+<hr className="my-8 border-gray-700" />
+
+<h2 className="text-2xl font-bold mb-4">
+  Chapter 9: SEO Basics
+</h2>
+
+<p className="text-gray-400 mb-4">
+  SEO helps search engines understand and rank your website.
+</p>
+
+<div className="bg-black p-4 rounded-lg border border-gray-700">
+  <pre>
+{`<title>My Website</title>
+
+<meta
+  name="description"
+  content="Learn Web Development"
+/>`}
+  </pre>
+</div>
+
+<hr className="my-8 border-gray-700" />
+
+<h2 className="text-2xl font-bold mb-4">
+  Chapter 10: HTML Final Project
+</h2>
+
+<p className="text-gray-400 mb-4">
+  Build a complete portfolio website using everything learned in HTML.
+</p>
+
+<div className="bg-black p-4 rounded-lg border border-gray-700">
+  <pre>
+{`Portfolio Website Project
+
+✔ Header
+✔ Navigation
+✔ About Section
+✔ Contact Form
+✔ Footer`}
   </pre>
 </div>
       </div>
