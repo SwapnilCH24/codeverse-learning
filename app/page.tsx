@@ -291,7 +291,13 @@ const loadReviews = async () => {
           </div>
 
           <div className="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 border border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 transition duration-300">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-700 rounded-full mx-auto mb-4 shadow-lg shadow-blue-500/50"></div>
+            <Image
+  src="/antar.png"
+  alt="Antar"
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+/>
             <h3 className="font-bold">Antar Bhowmik</h3>
             <p className="text-gray-400">UI/UX Designer</p>
           </div>
