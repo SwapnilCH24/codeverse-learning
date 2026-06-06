@@ -19,6 +19,7 @@ import {
 export default function Home() {
   const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const [menuOpen, setMenuOpen] = useState(false);
 const [review, setReview] = useState("");
 const [reviews, setReviews] = useState<any[]>([]);
 const [showAllReviews, setShowAllReviews] = useState(false);
@@ -80,7 +81,7 @@ const handleLogout = async () => {
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white overflow-x-hidden">
       {/* Navbar */}
-       <nav className="sticky top-0 z-50 flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-4 md:py-6 backdrop-blur-md bg-black/30 border-b border-gray-800">
+       <nav className="sticky top-0 z-50 flex flex-col items-center md:flex-row justify-between items-center px-4 md:px-10 py-4 md:py-6 backdrop-blur-md bg-black/30 border-b border-gray-800">
         <h1 className="text-xl md:text-3xl font-bold text-blue-500 ...">
           CodeVerse Learning
         </h1>
