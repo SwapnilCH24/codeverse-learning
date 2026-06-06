@@ -1,4 +1,69 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { auth, db } from "./lib/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+import {
+  addDoc,
+  collection,
+  getDocs,
+} from "firebase/firestore";
+
 export default function Home() {
+  const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [review, setReview] = useState("");
+const [reviews, setReviews] = useState<any[]>([]);
+const [rating, setRating] = useState(5);
+useEffect(() => {
+  loadReviews();
+}, []);
+  const handleSignUp = async () => {
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("Account created successfully!");
+  } catch (error: any) {
+    alert(error.message);
+  }
+};
+const handleLogin = async () => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login successful!");
+  } catch (error: any) {
+    alert(error.message);
+  }
+};
+const handleSubmitReview = async () => {
+  try {
+    await addDoc(collection(db, "reviews"), {
+      review,
+      email: auth.currentUser?.email,
+      rating,
+      createdAt: new Date(),
+    });
+
+    alert("Review submitted!");
+    setReview("");
+  } catch (error: any) {
+    alert(error.message);
+  }
+};
+const loadReviews = async () => {
+  const snapshot = await getDocs(collection(db, "reviews"));
+
+  const data = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  setReviews(data);
+};
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white">
       {/* Navbar */}
@@ -20,8 +85,17 @@ export default function Home() {
           <a href="#team" className="hover:text-blue-400 transition">
   Team
 </a>
+          <a href="#reviews" className="hover:text-blue-400 transition">
+  Reviews
+</a>
          <a href="#contact" className="hover:text-blue-400 transition">
   Contact
+</a>
+         <a
+  href="#login"
+  className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+>
+  Login
 </a>
         </div>
       </nav>
@@ -211,6 +285,90 @@ export default function Home() {
 
         </div>
       </section>
+      <section id="reviews" className="px-4 md:px-10 py-20">
+  <h2 className="text-4xl font-bold text-center mb-12">
+    Reviews & Comments
+  </h2>
+  <div className="max-w-xl mx-auto">
+  <textarea
+  placeholder="Write your review..."
+  value={review}
+  onChange={(e) => setReview(e.target.value)}
+  className="w-full p-4 rounded bg-gray-800 mb-4"
+  rows={4}
+/>
+<div className="mb-4 text-3xl">
+  {[1, 2, 3, 4, 5].map((star) => (
+    <span
+      key={star}
+      onClick={() => setRating(star)}
+      className="cursor-pointer"
+    >
+      {star <= rating ? "⭐" : "☆"}
+    </span>
+  ))}
+</div>
+
+  <button
+  onClick={handleSubmitReview}
+  className="bg-blue-600 px-6 py-3 rounded"
+>
+  Submit Review
+</button>
+{reviews.map((r, index) => (
+  <div key={index} className="bg-gray-900 p-4 rounded mt-4">
+    <p className="text-sm text-gray-400">{r.email}</p>
+    <p>{"⭐".repeat(r.rating || 0)}</p>
+<p>{r.review}</p>
+<p className="text-xs text-gray-500">
+  {new Date(r.createdAt?.seconds * 1000).toLocaleDateString()}
+</p>
+    
+  </div>
+))}
+</div>
+</section>
+
+{/* Login Section */}
+<section id="login" className="px-4 md:px-10 py-20">
+  <h2 className="text-4xl font-bold text-center mb-10">
+    Login / Sign Up
+  </h2>
+
+  <div className="max-w-md mx-auto bg-gray-900 p-8 rounded-xl">
+    <input
+  type="email"
+  placeholder="Email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full p-3 mb-4 rounded bg-gray-800"
+/>
+
+    <input
+      type="password"
+      placeholder="Password"
+      value={password}
+onChange={(e) => setPassword(e.target.value)}
+      className="w-full p-3 mb-4 rounded bg-gray-800"
+    />
+
+    <div className="flex gap-4">
+  <button
+  onClick={handleLogin}
+  className="flex-1 bg-blue-600 p-3 rounded"
+>
+  Login
+</button>
+
+  <button
+  onClick={handleSignUp}
+  className="flex-1 bg-green-600 p-3 rounded"
+>
+  Sign Up
+</button>
+</div>
+</div>
+</section>
 
       {/* Footer */}
       <footer id="contact" className="border-t border-gray-800 py-10 text-center text-gray-400">
