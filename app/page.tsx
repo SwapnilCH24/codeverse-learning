@@ -106,8 +106,8 @@ const handleLogout = async () => {
   Contact
 </a>
          {user ? (
-  <div className="bg-blue-600 px-4 py-2 rounded-lg">
-  {user.email.split("@")[0].slice(0, 6)}
+  <div className="bg-blue-600 px-2 py-1 rounded-lg text-xs">
+  👤 {user.email.split("@")[0].slice(0, 6)}
 </div>
 ) : (
   <a
