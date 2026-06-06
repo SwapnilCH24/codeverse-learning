@@ -78,14 +78,14 @@ const handleLogout = async () => {
   await signOut(auth);
 };
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white">
+    <main className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-blue-950 text-white overflow-x-hidden">
       {/* Navbar */}
        <nav className="sticky top-0 z-50 flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-4 md:py-6 backdrop-blur-md bg-black/30 border-b border-gray-800">
-        <h1 className="text-3xl font-bold text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.8)]">
+        <h1 className="text-xl md:text-3xl font-bold text-blue-500 ...">
           CodeVerse Learning
         </h1>
 
-        <div className="flex gap-4 md:gap-8 text-gray-300 text-sm md:text-base">
+        <div className="flex flex-wrap gap-3 md:gap-8 text-gray-300 text-sm md:text-base">
           <a href="#home" className="hover:text-blue-400 transition">
   Home
 </a>
@@ -106,7 +106,7 @@ const handleLogout = async () => {
 </a>
          {user ? (
   <div className="bg-blue-600 px-4 py-2 rounded-lg">
-  {user.email.split("@")[0]}
+  {user.email.split("@")[0].slice(0, 6)}
 </div>
 ) : (
   <a
