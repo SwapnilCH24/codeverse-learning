@@ -158,20 +158,23 @@ const handleLogout = async () => {
             <h3 className="text-2xl font-bold mb-2">HTML</h3>
             <p>Learn the structure of websites from beginner to advanced.</p>
             <div className="mt-4">
-  <div className="w-full bg-gray-800 rounded-full h-2">
-    <div className="bg-blue-500 h-2 rounded-full w-full"></div>
-  </div>
-
-  <p className="text-sm text-gray-400 mt-2">
-    100% Complete
-  </p>
+  <p className="text-sm text-gray-400 mt-4">
+  10 Chapters
+</p>
 </div>
           </a>
 
-          <div className="bg-gray-900 p-6 rounded-xl hover:scale-105 transition hover:shadow-[0_0_25px_#3b82f6]">
-            <h3 className="text-2xl font-bold mb-2">CSS</h3>
-            <p>Create beautiful and responsive websites.</p>
-          </div>
+          <a
+  href="/css"
+  className="block bg-gray-900 p-6 rounded-xl hover:scale-105 transition"
+>
+  <h3 className="text-2xl font-bold mb-2">CSS</h3>
+  <p>Create beautiful and responsive websites.</p>
+  <p className="text-sm text-gray-400 mt-4">
+  10 Chapters
+</p>
+</a>
+
 
           <div className="bg-gray-900 p-6 rounded-xl hover:scale-105 transition hover:shadow-[0_0_25px_#3b82f6]">
             <h3 className="text-2xl font-bold mb-2">JavaScript</h3>

@@ -74,10 +74,12 @@ export default function Home() {
 </div>
           </a>
 
-          <div className="bg-gray-900 p-6 rounded-xl hover:scale-105 transition hover:shadow-[0_0_25px_#3b82f6]">
-            <h3 className="text-2xl font-bold mb-2">CSS</h3>
-            <p>Create beautiful and responsive websites.</p>
-          </div>
+          <a href="/css">
+  <div className="bg-gray-900 p-6 rounded-xl hover:scale-105 transition">
+    <h3 className="text-2xl font-bold mb-2">CSS</h3>
+    <p>Create beautiful and responsive websites.</p>
+  </div>
+</a>
 
           <div className="bg-gray-900 p-6 rounded-xl hover:scale-105 transition hover:shadow-[0_0_25px_#3b82f6]">
             <h3 className="text-2xl font-bold mb-2">JavaScript</h3>
